@@ -1,0 +1,44 @@
+@import 'src/vars';
+
+body {
+    margin:0 0 0 100px;
+    width:500px;
+}
+@media screen and (max-width:780px) {
+  body {
+      margin:0 0 0 20px;
+      width:440px;
+  }
+}
+div.articleHeader {
+    display:flex;
+    position:relative;
+}
+    div.articleHeader > h2,h3 {
+        font-weight:100;
+        margin:0px;
+        font-family:$titleFonts;
+    }
+
+    div.articleHeader > h3 {
+        font-size:22pt;
+        position:absolute;
+        left:0;
+        bottom:0;
+    }
+    div.articleHeader > h2 {
+        font-size:42pt;
+        text-align:right;
+        color: $accentColor;
+        position:absolute;
+        right:30px;
+        bottom:0;
+    }
+div.articleContent {
+    margin:10px;
+}
+div.articleTags {
+    font-size:20pt;
+    color:$accentColor;
+    font-family:$titleFonts;
+}

@@ -1,0 +1,79 @@
+@import 'src/vars';
+
+div#top {
+  position:absolute;
+  top:5px;
+  right:25px;
+}
+  div#top a {
+      color:$darkColor;
+      text-decoration:none;
+  }
+  div#top a:hover {
+      text-decoration:underline;
+  }
+  div#top a:active {
+      font-weight:700;
+  }
+header {
+  height:220px;
+  margin:30px 0;
+  display:flex;
+  justify-content:center;
+  flex-direction:row;
+}
+  header > div#kappaImage {
+      width:150px;
+      margin:0 25px;
+      background:url('kappa.png');
+      opacity:0;
+      -webkit-animation: fadeIn 1s linear forwards;
+      -o-animation: fadeIn 1s linear forwards;
+      -moz-animation: fadeIn 1s linear fowards;
+      animation: fadeIn 1s linear forwards;
+  }
+  @-webkit-keyframes fadeIn {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+@media screen and (max-width:780px) {
+  header > div#kappaImage {
+      display:none;
+  }
+}
+  header > div#headerDivision {
+      margin:0 25px;
+      width:500px;
+      border:10px;
+      flex-direction:column;
+  }
+      header > div#headerDivision > div#blogImage {
+          width:500px;
+          height:120px;
+          background:url('blog.png');
+          opacity:0;
+          -webkit-animation: fadeIn 1s linear forwards;
+          -o-animation: fadeIn 1s linear forwards;
+          -moz-animation: fadeIn 1s linear fowards;
+          animation: fadeIn 1s linear forwards;
+          animation-delay:0.5s;
+      }
+      header > div#headerDivision > h1 {
+          font-family:"Wire One","Arial","sans serif";
+          color:$lightColor;
+          font-size: 46pt;
+          font-weight: 300;
+          margin:0;
+          text-align:center;
+          opacity:0;
+          -webkit-animation: fadeIn 1s linear forwards;
+          -o-animation: fadeIn 1s linear forwards;
+          -moz-animation: fadeIn 1s linear fowards;
+          animation: fadeIn 1s linear forwards;
+          animation-delay:0.5s;
+
+      }
