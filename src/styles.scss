@@ -4,7 +4,53 @@
 body{
   font-family:$defaultFonts;
   color:$defaultColor;
+  background-color:$backgroundColor;
 }
+
+
+// titles
+
+
+h2 {
+  font-weight: 100;
+}
+
+
+// forms
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color:inherit;
+  font-weight: 700;
+
+  border-radius: 3px;
+  min-height: 40px;
+  min-width: 100px;
+  background-color: #fff;
+  border: 1 solid $defaultColor;
+  outline: none;
+  margin: 5px;
+}
+
+input, textarea {
+  padding:5px;
+  font-family:$defaultFonts;
+  color:inherit;
+  font-size:inherit;
+  border-radius: 3px;
+  border: 1px solid $defaultColor;
+  border-left:3px solid $defaultColor;
+  outline:none;
+}
+
+label {
+  display: block;
+  padding:5px;
+  font-weight: 700;
+}
+
+
 
 /*keyframes*/
 @-webkit-keyframes fadeIn {

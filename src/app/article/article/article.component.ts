@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from '../models/article';
-import { StaticDataService } from '../static-data.service';
+import { Article } from '../../models/article';
+import { StaticDataService } from '../../static-data.service';
 
 @Component({
   selector: 'app-article',

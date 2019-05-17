@@ -2,7 +2,44 @@
 $titleFonts: "Wire One","Arial","sans serif";
 $defaultFonts: "Roboto","Arial","sans serif";
 
+$smallFontSize: 8pt;
+$mediumFontSize: 22pt;
+$bigFontSize: 42pt;
+$fabFontSize: 28pt;
+
+$thin: 100;
+$bold: 700;
+
+$unitWidth: 10px;
+$articleWidth: 500px;
+$articleMargin: 0 0 0 100px;
+$feedMargin: 40px auto;
+
+
 $accentColor: #963838;
 $darkColor: #444;
 $defaultColor: #777;
 $lightColor: #999;
+$backgroundColor: #fff;
+
+$fabSize: 60px;
+
+// media queries
+
+@media screen and (max-width:780px) {
+  $articleWidth: 440;
+  $articleMargin: 0 0 0 20px;
+}
+
+
+
+
+// mixin
+
+@mixin flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}

@@ -6,8 +6,16 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class StaticDataService {
+  private articles: Article[] = null;
 
-  constructor() { }
+
+  constructor() {
+    this.articles = [this.getArticle()];
+  }
+
+  addArticle(article: Article) {
+    this.articles.push(article);
+  }
 
   getArticle(): Article {
     const a = new Article();
@@ -30,7 +38,7 @@ export class StaticDataService {
   }
 
   getArticles(): Observable<Article[]> {
-    return of([this.getArticle()]);
+    return of(this.articles);
   }
 
 }

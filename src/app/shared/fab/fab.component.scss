@@ -1,0 +1,19 @@
+@import 'src/vars';
+
+div {
+  font-size: $fabFontSize;
+  border-radius: 50%;
+  width: $fabSize;
+  height: $fabSize;
+  font-weight: $bold;
+  text-align: center;
+  margin:0;
+  padding:0;
+  line-height: $fabSize*0.9;
+  position: fixed;
+  color:$lightColor;
+  border:1px double $lightColor;
+  right:3%;
+  bottom:3%;
+  box-shadow: 0 0 20px 5px $lightColor;
+}

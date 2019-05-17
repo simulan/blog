@@ -1,0 +1,50 @@
+@import 'src/vars';
+
+  // margin:$articleMargin;
+  // width:$articleWidth - 10;
+
+div.articleHeader {
+  @include flex();
+
+  h2,h3 {
+    align-self:baseline;
+    font-weight:100;
+    margin:0px;
+    font-family:$titleFonts;
+  }
+  h3 {
+    font-size:$mediumFontSize;
+    width: 30%;
+  }
+  h2 {
+    font-size:$bigFontSize;
+    text-align:right;
+    color: $accentColor;
+    width: 70%;
+  }
+}
+
+div.articleContent {
+    margin:10px;
+}
+
+div.actionIcons {
+
+  width:20px;
+  height:20px;
+  color:$lightColor;
+  a{
+    font-size: $smallFontSize;
+    font-style: italic;
+    padding:0 2px;
+  }
+}
+
+div.articleTags {
+  @include flex();
+  font-size:20pt;
+  color:$accentColor;
+  font-family:$titleFonts;
+  justify-content: space-between;
+}
+
