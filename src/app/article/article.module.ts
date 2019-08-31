@@ -15,8 +15,7 @@ const routes: Routes = [
     path: 'home', component: ArticleOverviewComponent, children: [
     ]
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: '**', redirectTo: 'home', pathMatch: 'full'}
+
 ];
 
 @NgModule({

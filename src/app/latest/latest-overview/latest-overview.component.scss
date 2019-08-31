@@ -1,0 +1,12 @@
+@import 'src/vars';
+
+main {
+  margin: $feedMargin;
+  width: $articleWidth;
+}
+
+main > p {
+    text-align:left;
+    font-style: italic;
+    color:$lightColor;
+}

@@ -7,6 +7,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './article/article.module#ArticleModule',
   },
+  {
+    path: 'latest',
+    loadChildren: './latest/latest.module#LatestModule'
+  },
+  {
+    path: 'project',
+    loadChildren: './project/project.module#ProjectModule'
+  },
   { path: 'about', component: AboutComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '**', redirectTo: 'home', pathMatch: 'full'},

@@ -27,6 +27,7 @@ export class ArticleCreationComponent implements OnInit {
 
   initializeArticle() {
     this.article = {
+      id: null,
       date: formatDate(new Date(), 'dd MMM yyyy', this.locale),
       text: '',
       title: '',

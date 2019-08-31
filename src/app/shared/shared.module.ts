@@ -4,13 +4,15 @@ import { LineComponent } from './line/line.component';
 import { SeperatorComponent } from './seperator/seperator.component';
 import { ButtonComponent } from './button/button.component';
 import { FabComponent } from './fab/fab.component';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
     LineComponent,
     SeperatorComponent,
     ButtonComponent,
-    FabComponent
+    FabComponent,
+    TooltipDirective
   ],
   imports: [
     CommonModule,

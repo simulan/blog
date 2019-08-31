@@ -8,7 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ArticleModule } from './article/article.module';
 import { SharedModule } from './shared/shared.module';
-import { DemoComponent } from './demo/demo.component';
+import { LatestModule } from './latest/latest.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,11 @@ import { DemoComponent } from './demo/demo.component';
     HeaderComponent,
     NavComponent,
     AboutComponent,
-    DemoComponent,
   ],
   imports: [
     BrowserModule,
     ArticleModule,
+    LatestModule,
     SharedModule,
     AppRoutingModule
   ],

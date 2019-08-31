@@ -1,5 +1,5 @@
 <main>
   <app-article-creation *ngIf='showCreationComponent' (create)='onCreateArticle($event)' (cancel)='onCancel()'></app-article-creation>
   <app-article-feed [articles$]='articles$'></app-article-feed>
-  <app-fab *ngIf='showFabComponent' (click)="onClickAdd()" (keyup.enter)="onClickAdd()"></app-fab>
+  <app-fab *ngIf='showFabComponent' tooltip (click)="onClickAdd()" (keyup.enter)="onClickAdd()"></app-fab>
 </main>

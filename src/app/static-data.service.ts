@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Article } from './models/article';
 import { Observable, of } from 'rxjs';
+import { Post } from './models/post';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,32 @@ export class StaticDataService {
 
   getArticles(): Observable<Article[]> {
     return of(this.articles);
+  }
+
+  getPostsByTags(): Observable<Map<string, Post[]>> {
+    return of(new Map<string, any[]>(
+      [
+        ['new',
+          [
+            {title: 'Train your branch skills'},
+            {title: 'Get your free azure trail here'}
+          ]
+        ],
+        ['js',
+          [
+            {title: 'Filtering & mapping data w/ rxjs'},
+            {title: 'JS > TS?'},
+            {title: 'Creating high perf 3D browser games'}
+          ]
+        ],
+        ['cs',
+          [
+            {title: 'Design patterns in csharp'},
+            {title: 'Csharp in depth by Jon Skeeth'},
+            {title: 'How to use LINQ for any provider'},
+          ]
+        ]
+      ]));
   }
 
 }

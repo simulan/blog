@@ -1,0 +1,7 @@
+<main>
+  <div *ngFor='let postKeyValues of posts$ | async | keyvalue'>
+    <b>{{postKeyValues.key}}</b>
+    <app-latest-post *ngFor='let post of postKeyValues.value' [post]='post'></app-latest-post>
+  </div>
+
+</main>
