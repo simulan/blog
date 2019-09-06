@@ -3,6 +3,10 @@ import { ArticleCreationComponent } from '../article-creation/article-creation.c
 import { Article } from 'src/app/models/article';
 import { StaticDataService } from 'src/app/static-data.service';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { EntityState } from 'src/app/store/reducers';
+import { ArticleSelectors } from 'src/app/store/services/article.selectors';
+import { GetArticlesAction, CreateArticleAction } from 'src/app/store/actions/article.actions';
 
 @Component({
   selector: 'app-article-overview',
@@ -13,15 +17,20 @@ export class ArticleOverviewComponent implements OnInit {
   public showCreationComponent = false;
   public showFabComponent = true;
   public articles$: Observable<Article[]>;
-
-  constructor(private staticDataService: StaticDataService) { }
+  public loading$: Observable<boolean>;
+  constructor(
+    private store: Store<EntityState>,
+    private articleSelectors: ArticleSelectors) {
+    this.articles$ = this.articleSelectors.articles$;
+    this.loading$ = this.articleSelectors.loading$;
+  }
 
   ngOnInit() {
     this.load();
   }
 
   private load() {
-    this.articles$ = this.staticDataService.getArticles();
+    this.store.dispatch(new GetArticlesAction());
   }
 
   public onCancel() {
@@ -32,9 +41,7 @@ export class ArticleOverviewComponent implements OnInit {
   public onCreateArticle(article: Article) {
     this.showFabComponent = true;
     this.showCreationComponent = false;
-    this.staticDataService.addArticle(article);
-    console.log(article);
-
+    this.store.dispatch(new CreateArticleAction(article));
   }
 
   public onClickAdd() {

@@ -14,8 +14,9 @@ export class StaticDataService {
     this.articles = [this.getArticle()];
   }
 
-  addArticle(article: Article) {
+  addArticle(article: Article): Observable<Article> {
     this.articles.push(article);
+    return of(article);
   }
 
   getArticle(): Article {

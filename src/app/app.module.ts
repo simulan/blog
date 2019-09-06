@@ -9,6 +9,12 @@ import { AboutComponent } from './about/about.component';
 import { ArticleModule } from './article/article.module';
 import { SharedModule } from './shared/shared.module';
 import { LatestModule } from './latest/latest.module';
+import { StoreModule, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AppStoreModule } from './store/app-store.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+export const metaReducers: MetaReducer<any>[] = [];
 
 @NgModule({
   declarations: [
@@ -19,6 +25,12 @@ import { LatestModule } from './latest/latest.module';
   ],
   imports: [
     BrowserModule,
+    AppStoreModule,
+    StoreModule.forRoot({}, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 5
+    }),
+    EffectsModule.forRoot([]),
     ArticleModule,
     LatestModule,
     SharedModule,
