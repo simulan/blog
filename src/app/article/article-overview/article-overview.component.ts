@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { EntityState } from 'src/app/store/reducers';
 import { ArticleSelectors } from 'src/app/store/services/article.selectors';
 import { GetArticlesAction, CreateArticleAction } from 'src/app/store/actions/article.actions';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-article-overview',
@@ -19,10 +20,8 @@ export class ArticleOverviewComponent implements OnInit {
   public articles$: Observable<Article[]>;
   public loading$: Observable<boolean>;
   constructor(
-    private store: Store<EntityState>,
-    private articleSelectors: ArticleSelectors) {
-    this.articles$ = this.articleSelectors.articles$;
-    this.loading$ = this.articleSelectors.loading$;
+    private articleService: ArticleService,
+    ) {
   }
 
   ngOnInit() {
@@ -30,7 +29,7 @@ export class ArticleOverviewComponent implements OnInit {
   }
 
   private load() {
-    this.store.dispatch(new GetArticlesAction());
+    this.articles$ = this.articleService.getAll();
   }
 
   public onCancel() {
@@ -41,11 +40,11 @@ export class ArticleOverviewComponent implements OnInit {
   public onCreateArticle(article: Article) {
     this.showFabComponent = true;
     this.showCreationComponent = false;
-    this.store.dispatch(new CreateArticleAction(article));
+    this.articleService.upsert(article);
   }
 
   public onClickAdd() {
-    if(!this.showCreationComponent) {
+    if (!this.showCreationComponent) {
       this.showFabComponent = false;
       this.showCreationComponent = true;
     }
